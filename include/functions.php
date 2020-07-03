@@ -32,5 +32,5 @@ function haalStatistiek($sqlStat)
     $stmt = $db_conn->prepare($sqlStat);
     $stmt->execute();
     $stat = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $stat['statistiek'];
+    return $stat;
 }

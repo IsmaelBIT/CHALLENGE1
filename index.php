@@ -22,33 +22,40 @@ require('include/functions.php');
             foreach ($students as $student) { ?>
                 <tr>
                     <td>
-                        
+                        <?= $student['naam_student'] ?>
                     </td>
                     <td>
-                        
+                        <?= $student['klas'] ?>
                     </td>
-                    <?php
-                    // <td> Als een student meer dan 30 minuten te laat komt moet de cel de class 'ergtelaat' krijgen. Anders is de class 'telaat'
-
-                    ?>
-                   
+                    <td
+                        <?php
+                            if ($student['aantal_minuten'] > 30)
+                            {
+                                ?> class="ergtelaat" <?php
+                            } else {
+                                ?> class="telaat" <?php
+                            }
+                         ?>
+                    >
+                        <?php
+                        // <td> Als een student meer dan 30 minuten te laat komt moet de cel de class 'ergtelaat'                           krijgen. Anders is de class 'telaat'
+                        echo $student['aantal_minuten'];
+                        ?>
                     </td>
                     <td>
-                        
+                        <?= $student['reden_student'] ?>
                     </td>
-                    <td>Verwijderknop</td>
+                    <td><a href="verwijder.php?id=<?= $student['id']?>" class="btn btn-danger">Verwijder</a></td>
                 </tr>
             <?php
             } // einde foreach 
             ?>
         </table>
         <br>
-        <a href="nieuw.php" class="btn btn-success">W&eacute;&eacute;r eentje te laat!</a>
-
+        <a href="nieuw.php"  class="btn btn-success">W&eacute;&eacute;r eentje te laat!</a>
 
         <!-- Hieronder komt de statistieken tabel van stats.php -->
-        
-
+        <?php include ('include/stats.php');?>
     </main>
 
 </body>

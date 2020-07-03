@@ -19,7 +19,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `toets-op6`
+-- Database: `challenge-telaatapp`
+CREATE DATABASE challengetelaatapp;
+USE challengetelaatapp;
 --
 
 -- --------------------------------------------------------
@@ -72,3 +74,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+DELETE FROM `te_laat` WHERE id = student_id;
+SELECT MAX(aantal_minuten) FROM `te_laat`;
+
+
